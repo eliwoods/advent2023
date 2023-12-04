@@ -45,8 +45,7 @@ def process_line_literals(line: str) -> int:
 def solve_part_2(file: str) -> int:
     data = get_data(file)
     vals = map(process_line_literals, data)
-    ans = sum(vals)
-    return ans
+    return sum(vals)
 
 
 def main():
