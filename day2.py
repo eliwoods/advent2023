@@ -48,7 +48,8 @@ COLORS = {
     'blue': 14,
 }
 
-GameData = list[dict[str, int]]
+RoundData = dict[str, int]
+GameData = list[RoundData]
 
 
 def parse_game_id(game_id: str) -> int:
@@ -84,7 +85,7 @@ def load_data(file: str) -> dict[int, GameData]:
     return output
 
 
-def _round_is_feasible(round_data: dict[str, int]) -> bool:
+def _round_is_feasible(round_data: RoundData) -> bool:
     return all(COLORS[color] >= val for color, val in round_data.items())
 
 
@@ -99,7 +100,23 @@ def solve_part_1(file: str) -> int:
 
 
 def solve_part_2(file: str) -> int:
-    pass
+    games = load_data(file)
+    game_powers = []
+    for game_data in games.values():
+        game_max = {
+            'red': 0,
+            'green': 0,
+            'blue': 0
+        }
+
+        for round in game_data:
+            for color, num in round.items():
+                if num > game_max[color]:
+                    game_max[color] = num
+
+        game_powers.append(game_max['red']*game_max['green']*game_max['blue'])
+
+    return sum(game_powers)
 
 
 def main():
