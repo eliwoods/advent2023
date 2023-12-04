@@ -34,18 +34,12 @@ def solve_part_1(file: str) -> int:
 
 
 def _process_line_literals(line: str) -> int:
-    pos = {}
-    for literal, num in NUMS.items():
-        r = line.find(literal)
-        if r != -1:
-            pos[num] = r
-
-        r = line.find(str(num))
-        if r != -1:
-            pos[num] = r
-
-    nums = sorted(pos.items(), key=lambda x: x[1])
-    ans = int(f'{nums[0][0]}{nums[-1][0]}')
+    nums = []
+    for i in range(len(line)):
+        for literal, num in NUMS.items():
+            if ''.join(line[i:i + len(literal)]) == literal or line[i] == str(num):
+                nums.append(num)
+    ans = int(f'{nums[0]}{nums[-1]}')
     return ans
 
 
@@ -57,11 +51,11 @@ def solve_part_2(file: str) -> int:
 
 
 def main():
-    # assert solve_part_1('day1-part1-test.txt') == 142
-    # print('Part 1:', solve_part_1('day1.txt'))
-    #
-    # assert solve_part_2('day1-part2-test.txt') == 281
-    # print('Part 2:', solve_part_2('day1.txt'))
+    assert solve_part_1('day1-part1-test.txt') == 142
+    print('Part 1:', solve_part_1('day1.txt'))
+
+    assert solve_part_2('day1-part2-test.txt') == 281
+    print('Part 2:', solve_part_2('day1.txt'))
     _process_line_literals('585')
 
 
