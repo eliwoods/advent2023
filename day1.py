@@ -56,7 +56,6 @@ def main():
 
     assert solve_part_2('day1-part2-test.txt') == 281
     print('Part 2:', solve_part_2('day1.txt'))
-    _process_line_literals('585')
 
 
 if __name__ == '__main__':
