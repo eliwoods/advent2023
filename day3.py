@@ -92,7 +92,8 @@ def get_symbol_locations(schematic: Schematic) -> SymbolLocations:
     return locations
 
 
-def find_part_numbers(schematic: Schematic, symbol_locations: SymbolLocations) -> tuple[set[int], list[tuple[int, ...]]]:
+def find_part_numbers(schematic: Schematic, symbol_locations: SymbolLocations) -> tuple[
+    set[int], list[tuple[int, ...]]]:
     """
     The direction encoding scheme is as follows for a given symbol
     0 1 2
@@ -186,7 +187,7 @@ def solve_part_2(file: str) -> int:
     symbol_locations = get_symbol_locations(schematic)
     mapped_schematic, part_number_map = map_part_numbers(schematic)
     _, gear_ratios = find_part_numbers(mapped_schematic, symbol_locations)
-    return sum([part_number_map[gr[0]]*part_number_map[gr[1]] for gr in gear_ratios])
+    return sum([part_number_map[gr[0]] * part_number_map[gr[1]] for gr in gear_ratios])
 
 
 def main() -> None:

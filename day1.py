@@ -48,7 +48,7 @@ def solve_part_2(file: str) -> int:
     return sum(vals)
 
 
-def main():
+def main() -> None:
     assert solve_part_1('day1-part1-test.txt') == 142
     # 55712
     print('Part 1:', solve_part_1('day1.txt'))

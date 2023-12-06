@@ -109,12 +109,12 @@ def solve_part_2(file: str) -> int:
             'blue': 0
         }
 
-        for round in game_data:
-            for color, num in round.items():
+        for round_ in game_data:
+            for color, num in round_.items():
                 if num > game_max[color]:
                     game_max[color] = num
 
-        game_powers.append(game_max['red']*game_max['green']*game_max['blue'])
+        game_powers.append(game_max['red'] * game_max['green'] * game_max['blue'])
 
     return sum(game_powers)
 
