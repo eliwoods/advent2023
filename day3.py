@@ -192,10 +192,10 @@ def solve_part_2(file: str) -> int:
 
 def main() -> None:
     assert solve_part_1('day3-test.txt') == 4361
-    print('Part 1:', solve_part_1('day3.txt'))
+    print('Part 1:', solve_part_1('day3-actual.txt'))
 
     assert solve_part_2('day3-test.txt') == 467835
-    print('Part 2:', solve_part_2('day3.txt'))
+    print('Part 2:', solve_part_2('day3-actual.txt'))
 
 
 if __name__ == '__main__':

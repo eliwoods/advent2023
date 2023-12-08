@@ -122,10 +122,10 @@ def solve_part_2(file: str) -> int:
 def main():
     assert solve_part_1('day2-part1-test.txt') == 8
     # 2795
-    print('Part 1:', solve_part_1('day2.txt'))
+    print('Part 1:', solve_part_1('day2-actual.txt'))
 
     assert solve_part_2('day2-part2-test.txt') == 2286
-    print('Part 2:', solve_part_2('day2.txt'))
+    print('Part 2:', solve_part_2('day2-actual.txt'))
 
 
 if __name__ == '__main__':
