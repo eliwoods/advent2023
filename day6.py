@@ -1,6 +1,13 @@
 import math
+import typing as t
 
-def get_data(file: str):
+
+class Race(t.TypedDict):
+    time: int
+    dist: int
+
+
+def get_data(file: str) -> list[Race]:
     with open(f'data/{file}', 'r') as f:
         lines = f.read().splitlines()
 
@@ -47,7 +54,7 @@ def solve_part2(file: str) -> int:
     return num_gt
 
 
-def main():
+def main() -> None:
     assert solve_part1('day6-test.txt') == 288
     print('Part 1: ', solve_part1('day6-actual.txt'))
 
