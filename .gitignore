@@ -156,4 +156,4 @@ cython_debug/
 .idea/
 
 # Puzzle inputs
-**/day*-actual.txt
+**/*actual.txt
