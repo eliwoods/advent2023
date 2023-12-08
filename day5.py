@@ -39,14 +39,11 @@ def get_data(file: str) -> tuple[dict[str, list[MapRow]], list[int]]:
 def apply_mapping(seeds: list[int], map_rows: list[MapRow]) -> list[int]:
     output = []
     for seed in seeds:
-        seed_mapped = False
         for map_row in map_rows:
             if map_row['source'] <= seed <= map_row['source'] + map_row['range']:
                 output.append(seed + map_row['diff'])
-                seed_mapped = True
                 break
-
-        if not seed_mapped:
+        else:
             output.append(seed)
 
     return output
